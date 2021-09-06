@@ -5,7 +5,7 @@ from anytree.dotexport import RenderTreeGraph
 from operator import itemgetter
 
 app = Flask(__name__)
-
+CORS(app)
 data = [
         {
             "id": 1,
@@ -55,7 +55,9 @@ def getarr():
 
 @app.route("/display")
 def tree():
-    return {'text': getQ()}
+    response = getQ
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return {'text': response}
 
 def merge(list1, list2):
       
