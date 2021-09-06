@@ -5,7 +5,6 @@ from anytree.dotexport import RenderTreeGraph
 from operator import itemgetter
 
 app = Flask(__name__)
-CORS(app)
 data = [
         {
             "id": 1,
