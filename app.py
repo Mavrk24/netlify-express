@@ -54,7 +54,7 @@ def getarr():
 
 @app.route("/display")
 def tree():
-    response = {'text':getQ()}
+    response = flask.jsonify({'text':getQ()})
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
