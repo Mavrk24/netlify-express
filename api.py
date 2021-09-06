@@ -43,6 +43,10 @@ CORS(app)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 screen_route = str (hash("screening"))
 
+@app.route('/')
+def hello():
+    return "Hello Flask-Heroku"
+
 @app.route("/username", methods=['POST'])
 def login():
     username = request.get_json()
