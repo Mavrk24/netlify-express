@@ -55,9 +55,9 @@ def getarr():
 
 @app.route("/display")
 def tree():
-    response = getQ
+    response = {'text':getQ()}
     response.headers.add('Access-Control-Allow-Origin', '*')
-    return {'text': response}
+    return response
 
 def merge(list1, list2):
       
