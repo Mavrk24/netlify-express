@@ -7,7 +7,7 @@ from operator import itemgetter
 
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 data = [
         {
             "id": 1,
