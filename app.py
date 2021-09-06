@@ -1,10 +1,13 @@
 from flask import Flask, jsonify,request, session
+from flask_cors import CORS
 from qTree import display, getQ, returnQ,valuate
 from anytree import Node, RenderTree,AsciiStyle,PreOrderIter
 from anytree.dotexport import RenderTreeGraph
 from operator import itemgetter
 
+
 app = Flask(__name__)
+CORS(app)
 data = [
         {
             "id": 1,
@@ -54,9 +57,8 @@ def getarr():
 
 @app.route("/display")
 def tree():
-    response = flask.jsonify({'text':getQ()})
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    return response
+    return {'text': getQ()}
+
 
 def merge(list1, list2):
       
