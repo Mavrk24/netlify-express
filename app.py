@@ -41,9 +41,7 @@ def login():
 
 @app.route("/subentry" , methods=['POST'])
 def sub():
-    entry = request.get_json()
-    session["entry"]=entry
-    return jsonify(entry)
+    return  "Hello Flask-Heroku"
 
 @app.route("/request")
 def getreq():
