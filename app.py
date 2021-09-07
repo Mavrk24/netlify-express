@@ -41,7 +41,8 @@ def login():
 
 @app.route("/subentry" , methods=['POST'])
 def sub():
-    return  "Hello Flask-Heroku"
+    entry = request.get_json(force=True)
+    return entry
 
 @app.route("/request")
 def getreq():
