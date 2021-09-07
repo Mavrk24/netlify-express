@@ -43,7 +43,7 @@ def login():
 def sub():
     entry = request.get_json()
     session["entry"]=entry
-    return entry 
+    return jsonify(entry)
 
 @app.route("/request")
 def getreq():
