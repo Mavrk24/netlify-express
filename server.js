@@ -1,12 +1,9 @@
 const express = require('express');
 const cors = require('cors')
 const app = express();
+let port = process.env.PORT || 8080
 
 app.use(cors());
-
-
-app.get('/', (req, res) => res.send('Working!!!'));
-
 
 app.use('/login', (req, res) => {
   res.send({
@@ -14,3 +11,4 @@ app.use('/login', (req, res) => {
   });
 });
 
+app.listen(port, () => console.log('API is running on http://localhost:8080/login'));
