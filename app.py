@@ -80,7 +80,7 @@ def merge(list1, list2):
             break
     return merged_list
 
-@app.route("/intervention")
+@app.route("/intervention" , methods=['POST'])
 def intervent():
     num=valuate()
     new_array = []
