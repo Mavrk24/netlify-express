@@ -94,10 +94,9 @@ def intervent():
     return {'text': new_array}
 
 
-@app.route("/mdp" , methods=['POST'])
+@app.route("/mdp")
 def mdp():
-    score = request.get_json(force=True)
-    mdp = MDP(N=score*9/5)
+    mdp = MDP(N=(25*9/5))
     payload = valueiteration(mdp)
     return payload
 
