@@ -4,6 +4,7 @@ from qTree import display, getQ, returnQ,valuate
 from anytree import Node, RenderTree,AsciiStyle,PreOrderIter
 from anytree.dotexport import RenderTreeGraph
 from operator import itemgetter
+from MDP import MDP, valueiteration
 
 
 app = Flask(__name__)
@@ -92,6 +93,13 @@ def intervent():
     new_array = sorted(array,key=itemgetter(1),reverse=True)
     return {'text': new_array}
 
+
+@app.route("/mdp" , methods=['POST'])
+def mdp():
+    score = request.get_json(force=True)
+    mdp = MDP(N=score*9/5)
+    payload = valueiteration(mdp)
+    return payload
 
 @app.route('/api', methods=['GET'])
 def get_api():
