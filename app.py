@@ -96,7 +96,7 @@ def intervent():
 
 @app.route("/mdp")
 def mdp():
-    mdp = MDP(N=(25*9/5))
+    mdp = MDP(N=45)
     payload = valueiteration(mdp)
     return payload
 
