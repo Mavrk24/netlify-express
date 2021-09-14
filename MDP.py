@@ -34,7 +34,8 @@ class MDP(object):
             result.append((state, 0.95 , -cost[1]))
         return result
     def discount(self):
-        return 1
+        disc = (90-self.N)/90
+        return disc
     def states(self):
         return range (1, self.N+1)
 
