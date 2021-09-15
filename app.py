@@ -97,10 +97,9 @@ def intervent():
 @app.route("/mdp")
 def markov():
     #value = int(request.get_json(force=True)['int_value'])
-    value = 3
-    mdp = MDP(N=value)
+    mdp = MDP(N=3)
     payload = jsonify(valueiteration(mdp))
-    action = payload[max(payload.keys(),key=converter)]
+    action = payload.items()[-1]
     return {'action': action}
 @app.route('/api', methods=['GET'])
 def get_api():
