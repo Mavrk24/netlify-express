@@ -1,12 +1,6 @@
 import sys
 import os
 
-def addCost(value):
-    cost = []
-    cost.append(int(value))
-    cost.append(int(30))
-    return cost
-
 class MDP(object):
     def __init__(self, N):
         self.N = N
@@ -24,6 +18,7 @@ class MDP(object):
         return actions
     def SProbReward (self,state,action):
         result = []
+        cost = [60,30]
         target ='shoulder'
         reward = [10.84,9.135,11.76, 8.93]
         if (action == 'ergonomic') and (target == 'neck'):
@@ -39,7 +34,8 @@ class MDP(object):
             result.append((state, 0.95 , -cost[1]))
         return result
     def discount(self):
-        return 1
+        disc = (90-self.N)/90
+        return disc
     def states(self):
         return range (1, self.N+1)
 
