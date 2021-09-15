@@ -18,7 +18,7 @@ class MDP(object):
         return actions
     def SProbReward (self,state,action):
         result = []
-        cost = [60,30]
+        cost = [300,30]
         target ='shoulder'
         reward = [10.84,9.135,11.76, 8.93]
         if (action == 'ergonomic') and (target == 'neck'):
