@@ -94,9 +94,10 @@ def intervent():
     return {'text': new_array}
 
 
-@app.route("/mdp", methods=['POST'])
+@app.route("/mdp") #, methods=['POST'])
 def markov():
-    value = int(request.get_json(force=True)['int_value'])
+    #value = int(request.get_json(force=True)['int_value'])
+    addcost(60)
     mdp = MDP(N=value)
     payload = valueiteration(mdp)
     data = {'action': list(payload.items())[-1][-1]}
