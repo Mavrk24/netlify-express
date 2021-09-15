@@ -99,7 +99,7 @@ def markov():
     value = int(request.get_json(force=True)['int_value'])
     mdp = MDP(N=value)
     payload = valueiteration(mdp)
-    return jsonify(payload)
+    return jsonify(payload)[-1]
 
 @app.route('/api', methods=['GET'])
 def get_api():
