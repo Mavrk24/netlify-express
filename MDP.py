@@ -35,6 +35,8 @@ class MDP(object):
         return result
     def discount(self):
         disc = (90-self.N)/90
+        if (disc >= 0.66):
+            disc = 1
         return disc
     def states(self):
         return range (1, self.N+1)
