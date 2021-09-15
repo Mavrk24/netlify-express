@@ -101,7 +101,7 @@ def markov():
     mdp = MDP(N=value)
     payload = jsonify(valueiteration(mdp))
     action = [Object.keys(payload)[Object.keys(payload).length - 1]]
-    return action
+    return {'action': action}
 @app.route('/api', methods=['GET'])
 def get_api():
     return jsonify(data)
