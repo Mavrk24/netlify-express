@@ -62,6 +62,4 @@ def valueiteration(MDP):
                 pi[state]='none'
             else:
                 pi[state] = max((Q(state,action),action) for action in MDP.Actions(state))[1]
-    for state in MDP.states(): 
-        valueiteration(MDP)
     return pi
