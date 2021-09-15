@@ -34,8 +34,7 @@ class MDP(object):
             result.append((state, 0.95 , -cost[1]))
         return result
     def discount(self):
-        disc = (90-self.N)/90
-        return disc
+        return 1
     def states(self):
         return range (1, self.N+1)
 
@@ -62,4 +61,7 @@ def valueiteration(MDP):
                 pi[state]='none'
             else:
                 pi[state] = max((Q(state,action),action) for action in MDP.Actions(state))[1]
+        print('{:15}{:15}{:15}'.format('s','V','pi(s)'))
+        for state in MDP.states():   
+            print('{:15}{:15}{:15}'.format(state,V[state],pi[state]))
     return pi
