@@ -96,7 +96,7 @@ def intervent():
 
 @app.route("/mdp")
 def markov():
-    mdp = MDP(N=45)
+    mdp = MDP(N=90)
     payload = valueiteration(mdp)
     return jsonify(payload)
 
