@@ -94,10 +94,10 @@ def intervent():
     return {'text': new_array}
 
 
-@app.route("/mdp") #, methods=['POST'])
+@app.route("/mdp", methods=['POST'])
 def markov():
-    #value = int(request.get_json(force=True)['int_value'])
-    mdp = MDP(N=25)
+    value = int(request.get_json(force=True)['int_value'])
+    mdp = MDP(N=value)
     payload = valueiteration(mdp)
     data = {'action': list(payload.items())[-1][-1]}
     return jsonify(data)
